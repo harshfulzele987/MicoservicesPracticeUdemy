@@ -1,0 +1,40 @@
+services:
+  account:
+    image: harshfulzele/accoutservice:v1
+    container_name: accountservice_container
+    restart: always
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - harshbank
+  loan:
+    image: harshfulzele/loans:s4
+    container_name: loan_container
+    restart: always
+    ports:
+      - "8081:8081"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - harshbank
+  card:
+    image: harshfulzele/cards:s4
+    container_name: card_container
+    restart: always
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - harshbank
+networks:
+  harshbank:
+    driver: "bridge"
