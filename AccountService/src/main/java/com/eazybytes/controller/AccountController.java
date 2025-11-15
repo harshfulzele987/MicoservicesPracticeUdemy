@@ -1,6 +1,7 @@
 package com.eazybytes.controller;
 
 import com.eazybytes.constant.AccountConstants;
+import com.eazybytes.dto.AccountContactInfoDto;
 import com.eazybytes.dto.AccountDto;
 import com.eazybytes.dto.CustomerDto;
 import com.eazybytes.dto.ResponseDto;
@@ -20,6 +21,9 @@ public class AccountController {
 
     @Autowired
     private IAccountService iAccountService;
+
+    @Autowired
+    private AccountContactInfoDto accountContactInfoDto;
 
     @PostMapping("/create")
     public ResponseEntity<ResponseDto> createCustomer(@Valid @RequestBody CustomerDto customerdto)
@@ -53,4 +57,10 @@ public class AccountController {
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseDto(AccountConstants.STATUS_200 , AccountConstants.MESSAGE_200));
     }
 
+    @GetMapping("/get-contact")
+    public ResponseEntity<AccountContactInfoDto> getContactDetails()
+    {
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(accountContactInfoDto);
+    }
 }

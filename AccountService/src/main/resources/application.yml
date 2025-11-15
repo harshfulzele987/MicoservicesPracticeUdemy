@@ -15,3 +15,12 @@ spring:
       ddl-auto: update
     show-sql: true
 
+accounts:
+  message: "This is the contact person information"
+  contactDetails:
+    name: "harsh fuzele"
+    email: "harshfulzele@gmail.com"
+  onCallSupport:
+    - (333)333
+    - (555)555
+
