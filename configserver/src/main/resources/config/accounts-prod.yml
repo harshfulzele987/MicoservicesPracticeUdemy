@@ -1,0 +1,8 @@
+accounts:
+  message: "This is the contact production person information"
+  contactDetails:
+    name: "Nitin vijay"
+    email: "nitinvijay@gmail.com"
+  onCallSupport:
+    - (333)333
+    - (555)555
